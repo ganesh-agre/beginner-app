@@ -1,0 +1,19 @@
+.app {
+  & .passenger {
+    & .checked-in {
+      display: inline-block;
+      height: 10px;
+      width: 10px;
+      background-color: rgb(129, 173, 129);
+      border-radius: 10px;
+    }
+
+    & .checked-out {
+      display: inline-block;
+      height: 10px;
+      width: 10px;
+      background-color: red;
+      border-radius: 10px;
+    }
+  }
+}
