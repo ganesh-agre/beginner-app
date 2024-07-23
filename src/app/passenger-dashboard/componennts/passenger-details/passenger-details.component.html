@@ -1,0 +1,20 @@
+<span class="status" [class.checked-in]="passenger.checkedIn"></span>
+<div *ngIf="isEditing">
+  <input [value]="passenger.fullname" (input)="nameChange($event)" />
+</div>
+<div *ngIf="!isEditing">
+  {{ passenger.fullname }}
+</div>
+<div class="date">
+  Check in date:
+  {{
+    passenger.checkInDate
+      ? (passenger.checkInDate | date : "yMMMMd" | uppercase)
+      : "Not checked in"
+  }}
+</div>
+<div class="children">
+  Children: {{ passenger.children?.length || 0 }}
+  <button (click)="handleEdit()">{{ isEditing ? "Done" : "Edit" }}</button>
+  <button (click)="handleRemove()">Remove</button>
+</div>
