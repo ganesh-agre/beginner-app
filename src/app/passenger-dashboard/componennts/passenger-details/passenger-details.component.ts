@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 import { Passenger } from '../../models/passenger.interface';
 
 @Component({
@@ -10,6 +10,7 @@ export class PassengerDetailsComponent {
   @Input() passenger!: Passenger;
   @Output() edit: EventEmitter<Passenger> = new EventEmitter();
   @Output() remove: EventEmitter<number> = new EventEmitter();
+  @Output() view: EventEmitter<number> = new EventEmitter();
   isEditing: boolean = false;
 
   nameChange(event: any) {
@@ -24,5 +25,9 @@ export class PassengerDetailsComponent {
 
   handleRemove() {
     this.remove.emit(this.passenger.id);
+  }
+
+  handleView() {
+    this.view.emit(this.passenger.id);
   }
 }

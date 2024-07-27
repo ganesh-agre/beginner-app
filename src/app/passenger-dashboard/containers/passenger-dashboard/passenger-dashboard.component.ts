@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Passenger } from '../../models/passenger.interface';
 import { PassengerDashboardService } from '../../passenger-dashboard.service';
 
@@ -10,7 +11,10 @@ import { PassengerDashboardService } from '../../passenger-dashboard.service';
 export class PassengerDashboardComponent implements OnInit {
   passengers: Passenger[] = [];
 
-  constructor(private pessengerDashboardService: PassengerDashboardService) {}
+  constructor(
+    private pessengerDashboardService: PassengerDashboardService,
+    private router: Router
+  ) {}
   ngOnInit(): void {
     this.pessengerDashboardService
       .getPassengers()
@@ -39,5 +43,9 @@ export class PassengerDashboardComponent implements OnInit {
           (passenger) => deletedPassenger.id !== passenger.id
         );
       });
+  }
+
+  onView(passengerId: number) {
+    this.router.navigate(['passengers', passengerId]);
   }
 }

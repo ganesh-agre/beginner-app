@@ -1,11 +1,10 @@
 {
   "passengers": [
     {
+      "fullname": "ganu",
       "id": "1",
-      "fullname": "Stephen",
       "checkedIn": true,
-      "checkInDate": 1490742000000,
-      "children": null
+      "checkInDate": 1490742000000
     },
     {
       "id": "3",
@@ -27,11 +26,9 @@
       ]
     },
     {
+      "fullname": "Ganesh",
       "id": "5",
-      "fullname": "Tina",
-      "checkedIn": false,
-      "checkInDate": null,
-      "children": null
+      "checkedIn": false
     }
   ]
 }

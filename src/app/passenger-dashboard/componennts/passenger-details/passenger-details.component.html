@@ -16,5 +16,6 @@
 <div class="children">
   Children: {{ passenger.children?.length || 0 }}
   <button (click)="handleEdit()">{{ isEditing ? "Done" : "Edit" }}</button>
-  <button (click)="handleRemove()">Remove</button>
+  <button (click)="handleRemove()" class="remove">Remove</button>
+  <button (click)="handleView()" class="remove">View</button>
 </div>
